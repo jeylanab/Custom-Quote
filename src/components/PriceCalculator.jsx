@@ -65,7 +65,7 @@ export default function PriceCalculator() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 mt-10 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="bg-white shadow-xl rounded-3xl p-8 md:p-12 space-y-10">
           <h1 className="text-3xl font-bold text-center text-gray-800">
