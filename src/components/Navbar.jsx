@@ -1,5 +1,6 @@
 // src/components/Navbar.jsx
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -21,25 +22,31 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-10">
-            <a href="#home" className="text-gray-700 hover:text-blue-600">
+            <NavLink to="/" className="text-gray-700 hover:text-blue-600">
               Home
-            </a>
-            <a href="#calculator" className="text-gray-700 hover:text-blue-600">
+            </NavLink>
+            <NavLink
+              to="/calculator"
+              className="text-gray-700 hover:text-blue-600"
+            >
               Calculator
-            </a>
-            <a href="#features" className="text-gray-700 hover:text-blue-600">
+            </NavLink>
+            <NavLink to="/features" className="text-gray-700 hover:text-blue-600">
               Features
-            </a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600">
+            </NavLink>
+            <NavLink to="/contact" className="text-gray-700 hover:text-blue-600">
               Contact
-            </a>
+            </NavLink>
           </div>
 
           {/* Desktop Custom Button */}
           <div className="hidden md:flex">
-            <button className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            <NavLink
+              to="/calculator"
+              className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >
               Get a Quote
-            </button>
+            </NavLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -58,30 +65,41 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-md rounded-b-2xl">
           <div className="px-6 py-4 space-y-3">
-            <a href="#home" className="block text-gray-700 hover:text-blue-600">
+            <NavLink
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className="block text-gray-700 hover:text-blue-600"
+            >
               Home
-            </a>
-            <a
-              href="#calculator"
+            </NavLink>
+            <NavLink
+              to="/calculator"
+              onClick={() => setIsOpen(false)}
               className="block text-gray-700 hover:text-blue-600"
             >
               Calculator
-            </a>
-            <a
-              href="#features"
+            </NavLink>
+            <NavLink
+              to="/features"
+              onClick={() => setIsOpen(false)}
               className="block text-gray-700 hover:text-blue-600"
             >
               Features
-            </a>
-            <a
-              href="#contact"
+            </NavLink>
+            <NavLink
+              to="/contact"
+              onClick={() => setIsOpen(false)}
               className="block text-gray-700 hover:text-blue-600"
             >
               Contact
-            </a>
-            <button className="w-full mt-3 px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            </NavLink>
+            <NavLink
+              to="/calculator"
+              onClick={() => setIsOpen(false)}
+              className="block w-full mt-3 px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-center"
+            >
               Get a Quote
-            </button>
+            </NavLink>
           </div>
         </div>
       )}

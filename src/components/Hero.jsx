@@ -1,6 +1,7 @@
 // src/components/Hero.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import heroImg from "../assets/hero.svg"; // replace with your wood panel product image
 
 export default function Hero() {
@@ -21,13 +22,22 @@ export default function Hero() {
           <p className="text-lg text-blue-100">
             Select size, thickness, and décor. Get instant prices per m². Simplify wholesale orders.
           </p>
-          <div className="flex flex-wrap gap-4 mt-4">
-            <button className="bg-blue-500 hover:bg-blue-400 text-white px-6 py-3 rounded-2xl font-semibold shadow-md transition">
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full">
+            <Link
+              to="/calculator"
+              className="w-full sm:w-auto text-center bg-blue-500 hover:bg-blue-400 text-white px-6 py-3 rounded-2xl font-semibold shadow-md transition"
+            >
               Start Calculation
-            </button>
-            <button className="border border-blue-300 hover:bg-blue-700 px-6 py-3 rounded-2xl font-semibold transition">
+            </Link>
+
+            <Link
+              to="/features"
+              className="w-full sm:w-auto text-center border border-blue-300 hover:bg-blue-700 px-6 py-3 rounded-2xl font-semibold transition"
+            >
               Explore Décor Options
-            </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -42,7 +52,7 @@ export default function Hero() {
             src={heroImg}
             alt="HPL Particleboard P2"
             className="w-full max-w-xl rounded-2xl shadow-lg"
-            animate={{ rotate: [0, 2, -2, 0] }} // slow subtle spin
+            animate={{ rotate: [0, 2, -2, 0] }} // subtle wiggle effect
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
           />
         </motion.div>
